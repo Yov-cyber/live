@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes-button {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no-button {
+            background-color: #cccccc;
+            color: black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>¿Quieres ser mi novia? ❤️</h1>
+    <p>Por favor, elige una opción:</p>
+    <div class="buttons">
+        <button class="button yes-button" onclick="confirmYes()">Sí 😍</button>
+        <button class="button no-button" onmouseover="moveNoButton()" ontouchstart="moveNoButton()">No 😅</button>
+    </div>
+</div>
+
+<script>
+    function confirmYes() {
+        alert("¡Sabía que dirías que sí! ❤️🥳");
+    }
+
+    function moveNoButton() {
+        const noButton = document.querySelector('.no-button');
+        const container = document.querySelector('.container');
+        
+        // Calculamos un rango aleatorio de movimiento basado en el tamaño del contenedor
+        const maxTop = container.clientHeight - noButton.clientHeight - 20;
+        const maxLeft = container.clientWidth - noButton.clientWidth - 20;
+
+        noButton.style.position = 'absolute';
+        noButton.style.top = Math.random() * maxTop + "px";
+        noButton.style.left = Math.random() * maxLeft + "px";
+    }
+</script>
+
+</body>
+</html>
